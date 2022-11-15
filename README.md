@@ -1,3 +1,1 @@
 # forBackendFundamentals
-# forBackendFundamentals
-# FORBACKENDFUNDAMENTALS
