@@ -1,0 +1,32 @@
+### crative un user
+POST http://localhost:4010/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Stephen Hawking",
+    "age": "88",
+    "email": "forvertec@gmail.com",
+    "tel": "33345612333",
+    "direccion": "california, Usa."
+}
+
+### visualizar todos los user
+ GET http://localhost:4010/api/users HTTP/1.1
+
+### buscar usuario por identificador
+GET http://localhost:4010/api/users/6373fecc4c31a96c35005d83 HTTP/1.1
+
+### actailzar y modificar
+PUT http://localhost:4010/api/users/6373fecc4c31a96c35005d83 HTTP/1.1
+Content-Type: application/json
+
+ {
+     "name": "jairo martinez",
+     "age": 18,
+     "email": "mamalon34@gmail.com",
+     "direccion": "Oaxaca, Oax."
+     
+ }
+    
+### eliminar objeto y user
+ DELETE http://localhost:4010/api/users/6372628d7d367297099ecd1c HTTP/1.1

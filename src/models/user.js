@@ -13,7 +13,16 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: true
-    }
+    },
+    tel: {
+        type: String,
+        required: true
+    },
+    direccion: {
+        type: String,
+        required: true
+      }
+
 });
 
 module.exports = mongoose.model('User', userSchema);

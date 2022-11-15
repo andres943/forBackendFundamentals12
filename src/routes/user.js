@@ -8,25 +8,17 @@ const router = express.Router();
 // y guardarlos con petodo save  y se tiene un tipo de  error se retorno o respuesta con un objeto de mensaje  
 
 router.post("/users", (req, res) => {
-    const user = userSchema(req.body);
-    user
-      .save()
-      .then((data) => res.json(data))
-      .catch((error) => res.json({ message: error }));
-  });
-   
-  // se creo como prueba de inicio res.send("create User");
+  const user = userSchema(req.body);
+  user
+    .save()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 
-
-    //   const user = userSchema(req.body);
-//   user
-//     .save()
-//     .then((data) => res.json(data))
-//     .catch((error) => res.json({ message: error }));
-// });
-
+// se creo como prueba de inicio res.send("create User");
 // get all users obtener todos los usuarios y responda con una promesa o 
 //si no con un exitoso error con un metodo y/o operacion get encontrar  
+
 router.get("/users", (req, res) => {
   userSchema
   .find()
@@ -34,14 +26,14 @@ router.get("/users", (req, res) => {
   .catch((error) => res.json({ message: error }));
 });
 
-// get a user encontrar a usuario por id desde la peticion de un parameto (id)
+// get a user encontrar a usuario por identificador desde la peticion de un parameto (id)
 //obtener un usuario especifico
- router.get("/users/:id", (req, res) => {
+router.get("/users/:id", (req, res) => {
   const { id } = req.params;
   userSchema
-  .findById(id)
-  .then((data) => res.json(data))
-  .catch((error) => res.json({ message: error }));
+    .findById(id)
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 // delete a user se eliminara un usuario
