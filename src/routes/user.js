@@ -6,7 +6,24 @@ const router = express.Router();
 
 // create user (crear usuario con metodo post(peticion y respuesta)) desde el cuerpo de la peticion "body" 
 // y guardarlos con petodo save  y se tiene un tipo de  error se retorno o respuesta con un objeto de mensaje  
-
+/**
+ * @swagger
+ *  responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  username:
+                    type: string
+                    description: The user name.
+  
+*/
 router.post("/users", (req, res) => {
   const user = userSchema(req.body);
   user
@@ -15,7 +32,6 @@ router.post("/users", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-// se creo como prueba de inicio res.send("create User");
 // get all users obtener todos los usuarios y responda con una promesa o 
 //si no con un exitoso error con un metodo y/o operacion get encontrar  
 
